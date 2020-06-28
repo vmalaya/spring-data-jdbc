@@ -1,9 +1,10 @@
 # Spring data JDBC application
 
-`
+```cmd
 // to run
 mvnw clean package 
-`
+```
+
 #### Reference Documentation
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
