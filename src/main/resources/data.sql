@@ -1,1 +1,1 @@
-insert into users (name) values ('Aragorn'), ('Mike'), ('Sherlock') ;
+insert into company (id, name) values ( 1, 'Coco' );

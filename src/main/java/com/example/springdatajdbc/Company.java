@@ -2,14 +2,16 @@ package com.example.springdatajdbc;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Embedded;
+
+import java.util.Set;
 
 @Data
-@RequiredArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Company {
   @Id
-  private int id;
+  private Integer id;
   private String name;
+  private Set<User> user;
 }
