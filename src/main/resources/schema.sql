@@ -6,5 +6,6 @@ create table if not exists company(
 create table if not exists user(
     id integer primary key,
 	company integer references company(id),
-	name varchar(100) null
+	name varchar(100) null,
+	password varchar(100) null
 );

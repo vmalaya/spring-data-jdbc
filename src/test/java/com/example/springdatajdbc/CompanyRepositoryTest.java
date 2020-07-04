@@ -18,8 +18,8 @@ class CompanyRepositoryTest {
   @Test
   void should_find_all() {
     Set users = new HashSet<User>();
-    users.add(new User(1, "Ben"));
-    users.add(new User(2, "Dan"));
+    users.add(new User(1, "Ben", "bens_password"));
+    users.add(new User(2, "Dan", "dans_password"));
 
     Company company =  new Company(1, "Coco", users);
     companyRepository.save(company);
