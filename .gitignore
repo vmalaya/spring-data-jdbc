@@ -29,3 +29,5 @@ build/
 
 ### VS Code ###
 .vscode/
+.m2/repo/
+File.txt
