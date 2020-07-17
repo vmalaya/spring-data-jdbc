@@ -1,13 +1,10 @@
 package com.example.springdatajdbc;
 
 import org.springframework.data.jdbc.repository.query.Query;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public interface CompanyRepository extends CrudRepository<Company, Integer> {
 
@@ -19,4 +16,7 @@ public interface CompanyRepository extends CrudRepository<Company, Integer> {
 
   @Query("select count(user.name) from company inner join user where company.name = :company")
   int countUsersInCompany(@Param("company") String company);
+
+  @Query("select user.password from company inner join user where user.name = :user")
+  String findPasswordOfUser(@Param("user") String user);
 }

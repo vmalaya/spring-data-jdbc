@@ -1,5 +1,6 @@
 package com.example.springdatajdbc;
 
+import com.example.springdatajdbc.hashing.PBKDF2Hasher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,5 +51,12 @@ class CompanyRepositoryTest {
     int usersInCompany = companyRepository.countUsersInCompany("Coco");
     System.out.println(usersInCompany);
     Assertions.assertEquals(2, usersInCompany);
+  }
+
+  @Test
+  void should_check_authorization() {
+    String passwordHashed = companyRepository.findPasswordOfUser("Ben");
+    boolean checked = new PBKDF2Hasher().checkPassword(new String("bens_password").toCharArray(), passwordHashed);
+    Assertions.assertTrue(checked);
   }
 }
